@@ -29,6 +29,7 @@ public class InitApplication implements CommandLineRunner {
         bmw.setModel("M3");
         bmw.setYear(2020);
         bmw.setEngine(3.0F);
+        bmw.setId(1);
 
         Modification bmwMod = new Modification();
         bmwMod.setStage("2");
@@ -43,6 +44,7 @@ public class InitApplication implements CommandLineRunner {
         golf.setModel("Golf R");
         golf.setYear(2019);
         golf.setEngine(2.0F);
+        golf.setId(2);
 
         Modification golfMod = new Modification();
         golfMod.setStage("1");
@@ -51,5 +53,7 @@ public class InitApplication implements CommandLineRunner {
 
         golf.setModifications(golfMod);
         myGarage.add(golf);
+
+
     }
 }

@@ -7,6 +7,7 @@ public class Car {
     private String color;
     private Float engine;
     private Modification modifications;
+    private int id;
 
     public String getBrand() {
         return brand;
@@ -56,4 +57,11 @@ public class Car {
         this.modifications = modifications;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

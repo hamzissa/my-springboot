@@ -21,6 +21,8 @@
             <p><strong>Stage:</strong> ${car.modifications.stage}</p>
             <p><strong>Turbo:</strong> ${car.modifications.turbo}</p>
             <p><strong>Nitro:</strong> ${car.modifications.nitro}</p>
+            <p><strong>Id:</strong> ${car.id}</p>
+            <a href="<c:url value='/editcar?id=${car.id}'/>">Edit</a>
         </div>
     </c:forEach>
 </div>
@@ -54,6 +56,7 @@
 
     <input type="submit"/>
 </form:form>
+
 
 </body>
 </html>

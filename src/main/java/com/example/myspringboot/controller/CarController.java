@@ -24,7 +24,7 @@ public class CarController {
     @PostMapping("/addcar")
     public String addCar(Model model,@Valid @ModelAttribute("car") Car car, BindingResult result) {
 
-        model.addAttribute("cars", InitApplication.myGarage);
+       model.addAttribute("cars", InitApplication.myGarage);
         model.addAttribute("car", car);
         model.addAttribute("brandlist", InitApplication.germanCar);
 
@@ -34,9 +34,29 @@ public class CarController {
             return "/cars";
         }
         else{
+
+            int id = InitApplication.myGarage.size() + 1;
+            car.setId(id);
             InitApplication.myGarage.add(car);
         }
         return "redirect:/showcars";
+    }
+
+    @GetMapping("/editcar")
+    public String editCar(@RequestParam int id, Model model) {
+        System.out.println(id);
+
+        Car car = InitApplication.myGarage.get(id-1);
+        model.addAttribute("cars", InitApplication.myGarage);
+        model.addAttribute("car", car);
+        model.addAttribute("brandlist", InitApplication.germanCar);
+
+//        Car car = InitApplication.myGarage.stream()
+//                .filter(c -> c.getId() == id)
+//                .findFirst()
+//                .orElse(null);
+
+        return "cars";
     }
 
     @InitBinder
